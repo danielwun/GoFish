@@ -27,9 +27,20 @@ body, html{
     font-size: 4em;
 }
 
-.cards{
+.dashboard{
+    display: block;
+    border: pink solid 1px;
+}
+
+.pair12{
     width: 11.5%;
-    height: 32%;
+}
+
+.pair6{
+    width: 16%;
+}
+
+.cards{
     margin: auto auto;
     perspective: 600px;
     background-color: transparent;

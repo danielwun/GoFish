@@ -1,6 +1,6 @@
 var GoFish={};
 GoFish["createCard"] = function( num ){ 
-    return "<div class='cards'>\
+    return "<div class='cards pair"+pair+"'>\
                 <div class='card-inner'>\
                     <div class='card-front'>\
                     </div>\
@@ -17,7 +17,7 @@ GoFish["makeTime"] = function (second) {
 
 GoFish["shuffleCard"] = function () {
     var nums = [];
-    for (var i = 1; i <= 12; i++) {
+    for (var i = 1; i <= pair; i++) {
         nums.push(i);
         nums.push(i);
     }
@@ -30,6 +30,7 @@ GoFish["shuffleCard"] = function () {
 }
 
 GoFish["win"]=function(){
+    $("div.dashboard").append("<div>" +GoFish.makeTime(sec)+"</div>")
     $("#playground").text("");
     $("#playground").append("<div class='win'>\
                 CONGRATULATION! You Made It!\
@@ -103,40 +104,53 @@ GoFish["changeCl"] = function(num){
     $("#cl").text("" + num);
 }
 
-GoFish["newGame"]=function(){
-    $("#newGame").on("click", function(){
-        $("#playground").text("");
-        GoFish.shuffleCard();
-        numFlip = 0;
-        picked = [];
-        delPair = 12;
-        sec = 0;
-        GoFish.changeCl(12);
-        GoFish.changeTime();
-    });
+
+
+GoFish["newGame"] = function () {
+    $("#playground").text("");
+    GoFish.shuffleCard();
+    numFlip = 0;
+    picked = [];
+    delPair = pair;
+    sec = 0;
+    GoFish.changeCl(pair);
+    GoFish.changeTime();
 }
+
+GoFish["clickNum"]=function(){
+    $("#six").on("click",function(){
+        pair = 6;
+        GoFish.newGame();
+    });
+
+    $("#twleve").on("click", function () {
+        pair = 12;
+        GoFish.newGame();
+    });
+} ;
 
 GoFish["initial"] = function(){
     // create cards
     numFlip = 0;
     picked = [];
-    delPair = 12;
+    pair = 12;
+    delPair = pair;
     sec = 0;
-    
     GoFish.shuffleCard();
     GoFish.playgroundEvent();
     GoFish.playEvent();
     GoFish.startTimer();
-    GoFish.newGame();
+    GoFish.clickNum();
+    $("#newGame").on("click", GoFish.newGame);
 };
 
 
 GoFish.initial();
 var numFlip = 0;
 var picked = [];
-var delPair = 12;
+var pair = 12;
+var delPair = pair;
 var sec = 0;
-
 
 
 
