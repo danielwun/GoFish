@@ -1,0 +1,84 @@
+body, html{
+    height: 100%;
+}
+.jumbotron{
+    border-radius: 30px;
+    color: rgb(42, 140, 193);
+}
+.display-1{
+    font-weight: 400;
+}
+#startScreen{
+    background-color: pink;
+    height: 100%;
+}
+
+#playground{
+    background-color: rgba(19, 69, 143, 0.886);
+}
+
+#menu{
+    font-size: 1em;
+    width: 100px;
+    height: 100%;
+}
+
+#cl{
+    font-size: 4em;
+}
+
+.cards{
+    width: 11.5%;
+    height: 32%;
+    margin: auto auto;
+    perspective: 600px;
+    background-color: transparent;
+}
+
+.card-inner{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-style: preserve-3d;
+    transition: transform 1s, opacity 1s, visibility 1s;
+    background-color: transparent;
+    
+}
+.card-front, .card-back{
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow:  2px 3px 5px rgba(0,0,0,0.3);
+    backface-visibility: hidden;
+}
+
+.card-front{
+    background-color: black;
+} 
+
+.card-back{
+    background-color: white;
+    transform: rotateY(180deg);
+    font-size: 6em;
+}
+
+.rotate{
+    transform: rotateY(180deg);
+}
+.nums{
+    line-height: 200px; 
+    text-align: center;
+    vertical-align: middle;
+}
+.win{
+    width: 1000px;
+    height: 300px;
+    line-height: 150px;
+    vertical-align: middle;
+    font-size: 6rem;
+    font-weight: 500;
+    margin: auto auto;
+    background-color: yellow;
+}
