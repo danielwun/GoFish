@@ -1,10 +1,7 @@
 body, html{
     height: 100%;
 }
-.jumbotron{
-    border-radius: 30px;
-    color: rgb(42, 140, 193);
-}
+
 .display-1{
     font-weight: 400;
 }
@@ -26,7 +23,14 @@ body, html{
 #cl{
     font-size: 4em;
 }
+.jumbotron{
+    border-radius: 30px;
+    color: rgb(42, 140, 193);
+}
 
+.space{
+    margin: 20px;
+}
 .dashboard{
     display: block;
     border: pink solid 1px;

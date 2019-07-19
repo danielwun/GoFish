@@ -30,11 +30,11 @@ GoFish["shuffleCard"] = function () {
 }
 
 GoFish["win"]=function(){
-    $("div.dashboard").append("<div>" +GoFish.makeTime(sec)+"</div>")
+    $("div.dashboard").append("<div>pair: "+pair+"<span class='space'></span>"+GoFish.makeTime(sec)+"</div>")
     
     $("#playground").text("");
     $("#playground").append("<div class='win'>\
-                CONGRATULATION! You Made It!\
+                CONGRATULATIONS! You Made It!\
             </div >");
 }
 
